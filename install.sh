@@ -14,7 +14,7 @@ if [ -d "$NVM_DIR" ]; then
   cd $NVM_DIR && git pull
 else
   # Cloning to $NVM_DIR
-  git clone https://github.com/creationix/nvm.git $NVM_DIR  
+  git clone git://github.com/appleboy/nvm.git $NVM_DIR
 fi
 
 echo
