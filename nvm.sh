@@ -462,7 +462,18 @@ nvm() {
         nvm help
         return
       fi
-      VERSION=`nvm_version $2`
+      case "$2" in
+        "latest" )
+          latest_version=`display_latest_version`
+          VERSION=`nvm_version v$latest_version`
+        ;;
+        "stable" )
+          stable_version=`display_latest_stable_version`
+          VERSION=`nvm_version v$stable_version`
+        ;;
+        *) VERSION=`nvm_version $2`
+        ;;
+      esac
       if [ ! -d $NVM_DIR/$VERSION ]; then
         echo "$VERSION version is not installed yet"
         return;
