@@ -6,13 +6,13 @@ First you'll need to make sure your system has a c++ compiler.  For OSX, XCode w
 
 ### Install script
 
-To install you could use the [install script](https://github.com/creationix/nvm/blob/master/install.sh) (requires Git) using cURL:
+To install you could use the [install script](https://github.com/appleboy/nvm/blob/develop/install.sh) (requires Git) using cURL:
 
-    curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+    curl https://raw.github.com/appleboy/nvm/develop/install.sh | sh
 
 or Wget:
 
-    wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
+    wget -qO- https://raw.github.com/appleboy/nvm/develop/install.sh | sh
 
 <sub>The script clones the nvm repository to `~/.nvm` and adds the source line to your profile (`~/.bash_profile` or `~/.profile`).</sub>
 
@@ -23,7 +23,7 @@ For manual install create a folder somewhere in your filesystem with the `nvm.sh
 
 Or if you have `git` installed, then just clone it:
 
-    git clone https://github.com/creationix/nvm.git ~/.nvm
+    git clone git://github.com/appleboy/nvm.git ~/.nvm
 
 To activate nvm, you need to source it from your bash shell
 
@@ -37,6 +37,14 @@ Often I also put in a line to use a specific version of node.
 To download, compile, and install the latest v0.10.x release of node, do this:
 
     nvm install 0.10
+
+To download, compile, and install the stable release of node, do this:
+
+	nvm install stable
+
+To download, compile, and install the latest release of node, do this:
+
+	nvm install latest
 
 And then in any new shell just use the installed version:
 
