@@ -237,7 +237,15 @@ nvm() {
         nvm help
         return
       fi
-      case "$2" in
+
+      shift
+
+      nobinary=0
+      if [ "$1" = "-s" ]; then
+        nobinary=1
+        shift
+      fi
+      case "$1" in
         "latest" )
           latest_version=`display_latest_version`
           VERSION=`nvm_remote_version $latest_version`
@@ -246,7 +254,7 @@ nvm() {
           stable_version=`display_latest_stable_version`
           VERSION=`nvm_remote_version $stable_version`
         ;;
-        *) VERSION=`nvm_remote_version $2`
+        *) VERSION=`nvm_remote_version $1`
         ;;
       esac
       ADDITIONAL_PARAMETERS=''
