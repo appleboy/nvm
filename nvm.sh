@@ -245,6 +245,11 @@ nvm() {
         nobinary=1
         shift
       fi
+
+      if [ "$os" = "freebsd" ]; then
+        nobinary=1
+      fi
+
       case "$1" in
         "latest" )
           latest_version=`display_latest_version`
@@ -258,21 +263,6 @@ nvm() {
         ;;
       esac
       ADDITIONAL_PARAMETERS=''
-      shift
-
-      nobinary=0
-      if [ "$1" = "-s" ]; then
-        nobinary=1
-        shift
-      fi
-
-      if [ "$os" = "freebsd" ]; then
-	nobinary=1
-      fi
-
-      VERSION=`nvm_remote_version $1`
-      ADDITIONAL_PARAMETERS=''
-
       shift
 
       while [ $# -ne 0 ]
